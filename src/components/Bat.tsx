@@ -40,11 +40,16 @@
 // components/Bat.js
 import Image from "next/image";
 
-const Bat = ({ className, size = 60 }) => {
+type BatProps = {
+  className?: string;
+  size?: number;
+};
+
+const Bat: React.FC<BatProps> = ({ className = "", size = 60 }) => {
   return (
     <div className={`bat-container ${className}`}>
       <Image
-        src="/assets/bat.svg" // Make sure to save your modified SVG with a new name
+        src="/assets/bat.svg"
         alt="A flying bat with flapping wings"
         width={size}
         height={size}
